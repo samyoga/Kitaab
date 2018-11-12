@@ -24,7 +24,6 @@ router.post('/signup', function(req, res){
   console.log('request.....', req.body);
   var user = new Users({
     username: req.body.username,
-    email:req.body.email,
     password: req.body.password
   });
   var promise = user.save();
@@ -35,11 +34,10 @@ router.post('/signup', function(req, res){
 });
 
 router.post('/login', function(req, res){
-  if (req.body.username && req.body.password && req.body.email){
+  if (req.body.username && req.body.password){
   Users.findOne({
     username:req.body.username,
     password: req.body.password,
-    email: req.body.email
   },function(err, user){
     console.log('user logged in with values:', user);
     res.redirect('/review')
