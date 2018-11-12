@@ -1,4 +1,5 @@
 body {
+  background: url(/images/textbook.jpg) fixed center no-repeat;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
